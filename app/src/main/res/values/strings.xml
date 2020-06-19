@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MovieApplication</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_favorites">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="overview">Overview</string>
+</resources>
