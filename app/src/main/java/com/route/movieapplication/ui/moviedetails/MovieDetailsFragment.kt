@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_movie_details.*
 
 class MovieDetailsFragment : Fragment() {
 
-    private lateinit var subscription: Disposable
+    private lateinit var subscriptions: Disposable
     private lateinit var genersAdapter: GenersAdapter
     private lateinit var movieDetailsViewModel: MovieDetailsViewModel
 
@@ -56,7 +56,7 @@ class MovieDetailsFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        subscription = movieDetailsViewModel.getMovieDetails(arguments.movieId).subscribe(
+        subscriptions = movieDetailsViewModel.getMovieDetails(arguments.movieId).subscribe(
             { response ->
                 setupViews(response)
             },
@@ -96,7 +96,7 @@ class MovieDetailsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
 
-        if (subscription.isDisposed)
-            subscription.dispose()
+        if (subscriptions.isDisposed)
+            subscriptions.dispose()
     }
 }
